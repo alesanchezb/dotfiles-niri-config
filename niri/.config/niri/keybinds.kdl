@@ -3,10 +3,10 @@ prefer-no-csd
 spawn-at-startup "waybar"
 
 binds {
-    Mod+Return { spawn "foot"; }
+    Mod+Return { spawn "alacritty"; }
     Mod+Space { spawn "rofi" "-show" "drun"; }
     Mod+Q { close-window; }
-    Mod+Shift+E { quit; }
+    Mod+Backspace { quit; }
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }
@@ -24,8 +24,12 @@ binds {
     Mod+Shift+4 { move-column-to-workspace 4; }
 
     Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Alt+Return { fullscreen-window; }
 
-    Print { spawn "grim"; }
-    Mod+Print { spawn "grim" "-g" "$(slurp)"; }
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+
+    Mod+E {spawn "emacsclient" "-c"; }
 }

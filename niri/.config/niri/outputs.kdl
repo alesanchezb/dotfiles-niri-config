@@ -1,0 +1,4 @@
+// Run `niri msg outputs` to find your actual output name, then uncomment/edit:
+// output "eDP-1" {
+//     scale 1.0
+// }

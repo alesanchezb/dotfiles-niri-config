@@ -1,8 +1,5 @@
 #!/bin/bash
-# Dev mode: default waybar, launch editor + terminal
-
-pkill waybar
-waybar &
+# Dev mode: launch editor + terminal
 
 alacritty &
 emacsclient -c . &

@@ -1,7 +1,4 @@
 #!/bin/bash
-# Gaming mode: minimal waybar, no gaps/focus-ring/animations
-
-pkill waybar
-waybar -c ~/.config/waybar/configs/config-gaming.jsonc &
+# Gaming mode: no gaps/focus-ring/animations
 
 niri msg action load-config-file --path ~/.config/niri/modes/gaming.kdl

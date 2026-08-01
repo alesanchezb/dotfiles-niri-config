@@ -1,7 +1,4 @@
 #!/bin/bash
-# Restore default mode: standard waybar + standard niri config
-
-pkill waybar
-waybar &
+# Restore default mode: standard niri config
 
 niri msg action load-config-file --path ~/.config/niri/config.kdl

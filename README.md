@@ -5,6 +5,7 @@
 ![Niri](https://img.shields.io/badge/WM-Niri-89b4fa)
 ![Shell](https://img.shields.io/badge/Shell-Noctalia-A8AEFF)
 ![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen)
+![Stars](https://img.shields.io/github/stars/alesanchezb/dotfiles-niri-config?style=social)
 
 <h3 align="center">
   <img align="center" width="80%" src="assets/desktop.png" />
@@ -241,3 +242,5 @@ This is my daily driver. It works. Most of the time. I break things when I'm bor
 ---
 
 Made with ❤️ by alesanchezb. If you found this helpful, please consider giving it a star! It helps others discover this project.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=alesanchezb/dotfiles&type=date&legend=top-left)](https://www.star-history.com/#alesanchezb/dotfiles-niri-config&type=date&legend=top-left)

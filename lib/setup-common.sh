@@ -163,7 +163,7 @@ seed_noctalia() {
     local tmp
     tmp="$(mktemp)"
     if jq --arg scheme "$NOCTALIA_SCHEME" --arg wp "$WALLPAPER_DIR" \
-          '.colorSchemes.predefinedScheme=$scheme | .wallpaper.directory=$wp | .wallpaper.overviewEnabled=true' \
+          '.colorSchemes.predefinedScheme=$scheme | .wallpaper.directory=$wp | .wallpaper.overviewEnabled=true | .appLauncher.enableClipboardHistory=true' \
           "$settings" > "$tmp"; then
         mv "$tmp" "$settings"
         ok "noctalia: preset '$NOCTALIA_SCHEME', wallpapers en $WALLPAPER_DIR"

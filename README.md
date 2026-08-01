@@ -243,4 +243,4 @@ This is my daily driver. It works. Most of the time. I break things when I'm bor
 
 Made with ❤️ by alesanchezb. If you found this helpful, please consider giving it a star! It helps others discover this project.
 
-📈 [**Star History**](https://www.star-history.com/#alesanchezb/dotfiles-niri-config&type=date&legend=top-left)
+📈 [**Star History**](https://www.star-history.com/?repos=alesanchezb%2Fdotfiles-niri-config&type=date&legend=top-left)

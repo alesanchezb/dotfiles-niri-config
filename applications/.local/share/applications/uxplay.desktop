@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=UxPlay
+GenericName=AirPlay server
+Exec=/usr/bin/uxplay
+Icon=video-display
+Terminal=true
+Categories=AudioVideo;
+Comment=AirPlay Unix mirroring server

@@ -468,6 +468,10 @@ Singleton {
           "enabled": true
         },
         {
+          "action": "sleepDisplays",
+          "enabled": true
+        },
+        {
           "action": "hibernate",
           "enabled": true
         },

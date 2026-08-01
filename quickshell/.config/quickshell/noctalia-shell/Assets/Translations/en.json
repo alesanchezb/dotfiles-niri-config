@@ -855,8 +855,10 @@
     "logout": "Logout",
     "reboot": "Reboot",
     "shutdown": "Shutdown",
+    "sleep-displays": "Sleep Displays",
     "suspend": "Suspend",
-    "title": "Session Menu"
+    "title": "Session Menu",
+    "sleepDisplays": "Sleep Displays"
   },
   "settings": {
     "about": {

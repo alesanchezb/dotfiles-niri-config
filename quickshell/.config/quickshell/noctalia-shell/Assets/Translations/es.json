@@ -855,8 +855,10 @@
     "logout": "Cerrar sesión",
     "reboot": "Reiniciar",
     "shutdown": "Apagar",
+    "sleep-displays": "Suspender pantallas",
     "suspend": "Suspender",
-    "title": "Menú de sesión"
+    "title": "Menú de sesión",
+    "sleepDisplays": "Suspender pantallas"
   },
   "settings": {
     "about": {

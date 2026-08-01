@@ -370,6 +370,11 @@ Singleton {
     Quickshell.execDetached(["sh", "-c", "systemctl suspend || loginctl suspend"]);
   }
 
+  function sleepDisplays() {
+    Logger.i("Compositor", "Sleep displays requested");
+    Quickshell.execDetached(["niri", "msg", "action", "power-off-monitors"]);
+  }
+
   function hibernate() {
     Logger.i("Compositor", "Hibernate requested");
     Quickshell.execDetached(["sh", "-c", "systemctl hibernate || loginctl hibernate"]);

@@ -1,3 +1,8 @@
+environment {
+    // Qt lee tema de iconos (Tela-circle-dracula) desde qt6ct (~/.config/qt6ct).
+    QT_QPA_PLATFORMTHEME "qt6ct"
+}
+
 include "input.kdl"
 include "outputs.kdl"
 include "layout.kdl"

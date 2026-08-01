@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-STOW_PKGS=(niri quickshell rofi scripts)
+STOW_PKGS=(niri quickshell rofi scripts applications environment)
 
 BASE_PKGS=(
     niri

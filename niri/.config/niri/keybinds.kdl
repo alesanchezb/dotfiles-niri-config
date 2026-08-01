@@ -2,12 +2,13 @@ prefer-no-csd
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "sh" "-c" "wl-paste --watch cliphist store &"
+spawn-at-startup "sh" "-c" "exec ~/.local/bin/alsa-unmute.sh"
 
 binds {
     Mod+Return { spawn "alacritty"; }
     Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+Q { close-window; }
-    Mod+Backspace { quit; }
+    Mod+Backspace { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }
@@ -63,7 +64,7 @@ binds {
     Mod+C { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "calculator"; }
     Mod+Ctrl+E { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
     Mod+L { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-
+    
     XF86MonBrightnessUp allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
 
@@ -84,10 +85,10 @@ binds {
 recent-windows {
     binds {
         Alt+Tab { next-window scope="all"; }
-        Alt+Shift+Tab { previous-window scope="output"; }
+        Alt+Ctrl+Tab { previous-window scope="output"; }
         Alt+grave { next-window scope="all" filter="app-id"; }
         Alt+Shift+grave { previous-window scope="all" filter="app-id"; }
-        Ctrl+Alt+Tab { next-window scope="workspace"; }
+        Alt+Shift+Tab { next-window scope="workspace"; }
         Ctrl+Alt+Shift+Tab { previous-window scope="workspace"; }
         Ctrl+Alt+grave { next-window scope="workspace" filter="app-id"; }
         Ctrl+Alt+Shift+grave { previous-window scope="workspace" filter="app-id"; }

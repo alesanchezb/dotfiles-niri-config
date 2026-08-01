@@ -65,6 +65,11 @@ SmartPanel {
       "title": I18n.tr("session-menu.suspend"),
       "isShutdown": false
     },
+    "sleepDisplays": {
+      "icon": "monitor",
+      "title": I18n.tr("session-menu.sleep-displays"),
+      "isShutdown": false
+    },
     "hibernate": {
       "icon": "hibernate",
       "title": I18n.tr("session-menu.hibernate"),
@@ -225,6 +230,9 @@ SmartPanel {
       } else {
         CompositorService.suspend();
       }
+      break;
+    case "sleepDisplays":
+      CompositorService.sleepDisplays();
       break;
     case "hibernate":
       CompositorService.hibernate();

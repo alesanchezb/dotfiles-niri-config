@@ -119,8 +119,8 @@ Read these or suffer.
 Arch-based? Run this:
 
 ```bash
-git clone https://github.com/alesanchezb/dotfiles.git
-cd dotfiles
+git clone https://github.com/alesanchezb/dotfiles-niri-config.git
+cd dotfiles-niri-config
 ./install.sh
 ```
 
@@ -135,7 +135,7 @@ Not on Arch? Check [docs/INSTALL.md](docs/INSTALL.md) for manual steps.
 Already installed? Pull and sync:
 
 ```bash
-cd dotfiles
+cd dotfiles-niri-config
 git pull
 ./update.sh
 ```
@@ -243,4 +243,4 @@ This is my daily driver. It works. Most of the time. I break things when I'm bor
 
 Made with ❤️ by alesanchezb. If you found this helpful, please consider giving it a star! It helps others discover this project.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=alesanchezb/dotfiles&type=date&legend=top-left)](https://www.star-history.com/#alesanchezb/dotfiles-niri-config&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=alesanchezb/dotfiles-niri-config&type=date&legend=top-left)](https://www.star-history.com/#alesanchezb/dotfiles-niri-config&type=date&legend=top-left)

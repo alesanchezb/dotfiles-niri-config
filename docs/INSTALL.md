@@ -5,7 +5,7 @@ Arch-based distributions only (the installer uses `pacman` and `yay`).
 ## Quick install
 
 ```bash
-git clone https://github.com/alesanchezb/dotfiles.git
+git clone https://github.com/alesanchezb/dotfiles-niri-config.git
 cd dotfiles
 ./install.sh
 ```

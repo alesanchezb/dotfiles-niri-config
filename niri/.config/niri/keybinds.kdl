@@ -1,10 +1,11 @@
 prefer-no-csd
 
-spawn-at-startup "waybar"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "sh" "-c" "wl-paste --watch cliphist store &"
 
 binds {
     Mod+Return { spawn "alacritty"; }
-    Mod+Space { spawn "rofi" "-show" "drun"; }
+    Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+Q { close-window; }
     Mod+Backspace { quit; }
 
@@ -12,6 +13,15 @@ binds {
     Mod+Right { focus-column-right; }
     Mod+Up    { focus-window-up; }
     Mod+Down  { focus-window-down; }
+
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down-or-column-right; }
+    Mod+K { focus-window-up-or-column-left; }
+    Mod+Semicolon { focus-column-right; }
+
+    Mod+Tab { toggle-overview; }
+    Mod+Ctrl+Tab { focus-workspace-down; }
+    Mod+Shift+Tab { focus-workspace-up; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -24,12 +34,63 @@ binds {
     Mod+Shift+4 { move-column-to-workspace 4; }
 
     Mod+F { maximize-column; }
+    Mod+W { toggle-window-floating; }
     Alt+Return { fullscreen-window; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-
+    Mod+B { spawn "zen-browser"; }
+    Mod+P { spawn "nautilus"; }
+    Mod+M { spawn "spotify-launcher"; }
     Mod+E {spawn "emacsclient" "-c"; }
+
+    Mod+Shift+R { spawn "niri" "msg" "action" "load-config-file"; }
+    Mod+Ctrl+K { show-hotkey-overlay; }
+    Mod+Ctrl+Q { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+
+    Mod+F1 { spawn "~/.local/bin/mode-dev.sh"; }
+    Mod+F2 { spawn "~/.local/bin/mode-gaming.sh"; }
+    Mod+F3 { spawn "~/.local/bin/mode-music.sh"; }
+    Mod+F4 { spawn "~/.local/bin/mode-normal.sh"; }
+
+    Mod+Shift+w { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "random"; }
+    Mod+Ctrl+w { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
+    Mod+S { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+Comma { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+    Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Mod+C { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "calculator"; }
+    Mod+Ctrl+E { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+    Mod+L { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_SOURCE@" "toggle"; }
+
+    F9 allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    F10 allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    F11 allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
 }
+
+recent-windows {
+    binds {
+        Alt+Tab { next-window scope="all"; }
+        Alt+Shift+Tab { previous-window scope="output"; }
+        Alt+grave { next-window scope="all" filter="app-id"; }
+        Alt+Shift+grave { previous-window scope="all" filter="app-id"; }
+        Ctrl+Alt+Tab { next-window scope="workspace"; }
+        Ctrl+Alt+Shift+Tab { previous-window scope="workspace"; }
+        Ctrl+Alt+grave { next-window scope="workspace" filter="app-id"; }
+        Ctrl+Alt+Shift+grave { previous-window scope="workspace" filter="app-id"; }
+    }
+}
+

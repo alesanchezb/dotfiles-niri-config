@@ -1,0 +1,18 @@
+// Standalone gaming-mode config, loaded via:
+// niri msg action load-config-file --path ~/.config/niri/modes/gaming.kdl
+
+include "../input.kdl"
+include "../outputs.kdl"
+include "../keybinds.kdl"
+include "../window-rules.kdl"
+
+layout {
+    gaps 0
+    focus-ring {
+        off
+    }
+}
+
+animations {
+    off
+}

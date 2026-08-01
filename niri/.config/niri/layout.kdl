@@ -11,8 +11,23 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        width 2
-        active-color "#7fc8ff"
-        inactive-color "#3c3c3c"
+        width 3
+        active-gradient from="#89b4fa" to="#b4c8fa" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#45475a" to="#585b70" angle=45 relative-to="workspace-view"
     }
+
+    border {
+        width 2
+        active-gradient from="#89b4fa" to="#cba6f7" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#313244" to="#45475a" angle=45 relative-to="workspace-view"
+    }
+
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+
+    background-color "transparent"
 }

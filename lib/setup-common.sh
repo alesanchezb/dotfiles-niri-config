@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-STOW_PKGS=(niri quickshell rofi scripts applications environment)
+STOW_PKGS=(niri quickshell rofi scripts applications environment noctalia)
 
 BASE_PKGS=(
     niri
@@ -39,6 +39,7 @@ BASE_PKGS=(
 )
 
 AUR_PKGS=(
+    noctalia-git
     quickshell-git
     matugen-bin
     ttf-jetbrains-mono-nerd

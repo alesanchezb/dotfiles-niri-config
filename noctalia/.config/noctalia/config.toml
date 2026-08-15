@@ -1,0 +1,38 @@
+# Noctalia v5 config
+# El resto de ajustes se pueden tocar desde Settings (se guardan en
+# ~/.local/state/noctalia/settings.toml, que gana sobre este archivo).
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+[wallpaper]
+directory = "~/Pictures/wallpapers"
+
+[widget.media]
+art_size = 20
+title_scroll = "on_hover"
+hide_when_no_media = true
+
+# Barra: lista por defecto + widget del plugin game-launcher
+[bar.default]
+end = [
+    "media",
+    "tray",
+    "notifications",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "alexander/game-launcher:launcher",
+    "control-center",
+    "session",
+]
+
+[plugins]
+auto_update = true
+enabled = ["alexander/game-launcher"]
+

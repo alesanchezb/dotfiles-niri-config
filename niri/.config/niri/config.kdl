@@ -3,6 +3,11 @@ environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
+debug {
+    // Permite acciones de notificaciones y activación de ventanas desde Noctalia.
+    honor-xdg-activation-with-invalid-serial
+}
+
 include "input.kdl"
 include "outputs.kdl"
 include "layout.kdl"

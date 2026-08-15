@@ -2,6 +2,7 @@ input {
     keyboard {
         xkb {
             layout "us"
+            variant "altgr-intl"
             options "ctrl:swapcaps"
         }
     }

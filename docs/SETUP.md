@@ -15,15 +15,17 @@ Highlights:
 - **Stow**: conflicts are handled safely first —
   - symlinks already pointing into the repo are replaced,
   - anything else (real files/dirs) is **backed up** to `~/.dotfiles-backup/<timestamp>/`.
-- **noctalia seed**: writes `~/.config/noctalia/settings.json` (from the shell's
-  `settings-default.json` if missing) setting the color scheme (`NOCTALIA_SCHEME`,
-  default `Nord`) and wallpaper dir (`WALLPAPER_DIR`, default `~/Pictures/wallpapers`).
+- **Wallpapers**: creates `WALLPAPER_DIR` (default `~/Pictures/wallpapers`) if missing.
 - **emacs-config**: prompts to clone + run `alesanchezb/emacs-config` into `~/.repos/` (`--emacs` / `--no-emacs` to force).
+
+Noctalia is a **v5 native shell**: its whole config is the stow-linked
+`~/.config/noctalia/config.toml` (theme, wallpaper, plugins, bar). There's no
+settings.json seeding anymore.
 
 ## `uninstall.sh`
 
 - Unlinks everything with `stow -D`.
-- Optionally removes the installed packages (careful — that includes niri and quickshell).
+- Optionally removes the installed packages (careful — that includes niri and noctalia).
 - Optionally deletes `~/.repos/emacs-config`.
 - Backups from previous installs are left in `~/.dotfiles-backup/`.
 
@@ -38,9 +40,8 @@ Highlights:
 
 | Var | Default | Meaning |
 |-----|---------|---------|
-| `NOCTALIA_SCHEME` | `Nord` | Color preset seeded into noctalia |
-| `WALLPAPER_DIR` | `~/Pictures/wallpapers` | Wallpaper folder seeded into noctalia |
+| `WALLPAPER_DIR` | `~/Pictures/wallpapers` | Wallpaper folder created by the installer |
 
-The stow packages are `niri`, `quickshell`, `rofi`, `scripts`. The quickshell
-package ships a `.stow-local-ignore` so screenshots and the shell's own
-`.gitignore` are not linked into `~/.config`.
+The stow packages are `niri`, `rofi`, `scripts`, `applications`, `environment` and
+`noctalia`. `quickshell-git` stays in the AUR list because the separate `ii` rice
+(`~/.repos/WehttamSnaps-Niri`) needs the Quickshell runtime.

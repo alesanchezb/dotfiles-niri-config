@@ -15,6 +15,31 @@ art_size = 20
 title_scroll = "on_hover"
 hide_when_no_media = true
 
+# Notificaciones: noctalia actúa como daemon de org.freedesktop.Notifications.
+# Es importante que dunst/swaync estén enmascarados (systemctl --user mask dunst)
+# para que no le roben el nombre por activación DBus.
+[notification]
+enable_daemon = true
+show_app_name = true
+show_actions = true
+position = "top_center"
+layer = "top"
+
+# Navegación de paneles y launcher (estilo emacs: Ctrl+n/Ctrl+p para mover el
+# cursor de selección; se suman a las teclas de flecha por defecto).
+[keybinds]
+cancel       = ["Escape"]
+copy         = ["Ctrl+c"]
+delete       = ["Delete"]
+down         = ["Down", "Ctrl+n"]
+left         = ["Left"]
+right        = ["Right"]
+save         = ["Ctrl+s"]
+tab_next     = ["Tab"]
+tab_previous = ["Shift+ISO_Left_Tab"]
+up           = ["Up", "Ctrl+p"]
+validate     = ["Return", "KP_Enter", "space"]
+
 # Barra: lista por defecto + widget del plugin game-launcher
 [bar.default]
 end = [
@@ -34,5 +59,20 @@ end = [
 
 [plugins]
 auto_update = true
-enabled = ["alexander/game-launcher"]
+enabled = [
+    "alexander/game-launcher",
+    "noctalia/wallhaven",
+]
+
+[[plugins.source]]
+name = "official"
+kind = "git"
+location = "https://github.com/noctalia-dev/official-plugins"
+enabled = true
+
+[[plugins.source]]
+name = "community"
+kind = "git"
+location = "https://github.com/noctalia-dev/community-plugins"
+enabled = true
 

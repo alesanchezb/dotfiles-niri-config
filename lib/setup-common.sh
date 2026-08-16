@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-STOW_PKGS=(niri quickshell rofi scripts applications environment noctalia)
+STOW_PKGS=(niri rofi scripts applications environment noctalia)
 
 BASE_PKGS=(
     niri
@@ -40,7 +40,7 @@ BASE_PKGS=(
 
 AUR_PKGS=(
     noctalia-git
-    quickshell-git
+    quickshell-git  # runtime para el rice ii (~/.repos/WehttamSnaps-Niri)
     matugen-bin
     ttf-jetbrains-mono-nerd
     ttf-iosevka-nerd
@@ -50,7 +50,6 @@ AUR_PKGS=(
 
 OPTIONAL_PKGS=(cava ytmdesktop)
 
-NOCTALIA_SCHEME="${NOCTALIA_SCHEME:-Nord}"
 WALLPAPER_DIR="${WALLPAPER_DIR:-$HOME/Pictures/wallpapers}"
 
 # --- colors ---
@@ -146,30 +145,4 @@ prep_stow() {
                           s/.*is neither a regular file nor a symlink: \([^ ]*\).*/\1/p;
                           s/.*over existing target \([^ ]*\).*/\1/p' )
     done
-}
-
-# --- noctalia settings ---
-seed_noctalia() {
-    local settings="$HOME/.config/noctalia/settings.json"
-    local default="$REPO_DIR/quickshell/.config/quickshell/noctalia-shell/Assets/settings-default.json"
-    if [ ! -f "$settings" ] && [ -f "$default" ]; then
-        mkdir -p "$HOME/.config/noctalia"
-        cp "$default" "$settings"
-        info "creado settings.json de noctalia desde el default"
-    fi
-    if [ ! -f "$settings" ]; then
-        warn "no se pudo sembrar noctalia (falta settings.json)"
-        return
-    fi
-    local tmp
-    tmp="$(mktemp)"
-    if jq --arg scheme "$NOCTALIA_SCHEME" --arg wp "$WALLPAPER_DIR" \
-          '.colorSchemes.predefinedScheme=$scheme | .wallpaper.directory=$wp | .wallpaper.overviewEnabled=true | .appLauncher.enableClipboardHistory=true' \
-          "$settings" > "$tmp"; then
-        mv "$tmp" "$settings"
-        ok "noctalia: preset '$NOCTALIA_SCHEME', wallpapers en $WALLPAPER_DIR"
-    else
-        rm -f "$tmp"
-        warn "no se pudo actualizar noctalia settings"
-    fi
 }

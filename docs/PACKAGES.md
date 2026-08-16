@@ -31,7 +31,8 @@ Everything the installer (`install.sh`) uses, by category. Lists mirror `lib/set
 
 | Package | Purpose |
 |---------|---------|
-| `quickshell-git` | Shell framework that runs noctalia-shell |
+| `noctalia-git` | The native v5 shell (bar, panels, launcher, IPC) |
+| `quickshell-git` | Quickshell runtime, needed by the `ii` rice |
 | `matugen-bin` | Wallpaper-based color theming |
 | `ttf-jetbrains-mono-nerd` | Terminal/UI font used by rofi & noctalia |
 | `ttf-iosevka-nerd` | Alternate UI font |

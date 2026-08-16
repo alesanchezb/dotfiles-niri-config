@@ -6,7 +6,7 @@ info "Desenlazando configs (stow -D)..."
 unstow_pkgs
 ok "symlinks removidos: ${STOW_PKGS[*]}"
 
-if ask_yes "¿Desinstalar también los paquetes instalados por el setup? ¡CUIDADO: incluye niri, quickshell y rofi!"; then
+if ask_yes "¿Desinstalar también los paquetes instalados por el setup? ¡CUIDADO: incluye niri, noctalia y rofi!"; then
     info "Desinstalando paquetes del sistema: ${BASE_PKGS[*]}"
     sudo pacman -Rns --noconfirm "${BASE_PKGS[@]}" || warn "algunos paquetes no se pudieron remover (¿están en uso?)"
     if have yay; then

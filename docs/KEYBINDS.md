@@ -1,6 +1,8 @@
 # Keybinds
 
-Default keybinds, from `niri/.config/niri/keybinds.kdl`. `Mod` is the Super/Windows key.
+Keybinds de niri (de `niri/.config/niri/keybinds.kdl`) y de los paneles de
+noctalia (de `noctalia/.config/noctalia/config.toml`, sección `[keybinds]`).
+`Mod` es la tecla Super/Windows.
 
 ## Windows & focus
 
@@ -8,10 +10,16 @@ Default keybinds, from `niri/.config/niri/keybinds.kdl`. `Mod` is the Super/Wind
 |-----|--------|
 | `Mod+Return` | Terminal (alacritty) |
 | `Mod+Q` | Close window |
-| `Mod+Backspace` | Quit Niri |
-| `Mod+Left` / `Mod+Right` | Focus column left / right |
-| `Mod+Up` / `Mod+Down` | Focus window up / down |
-| `Mod+H` / `Mod+J` / `Mod+K` / `Mod+Semicolon` | Vim-ish focus movement |
+| `Mod+Backspace` | Session menu (logout / power) |
+| `Mod+Left` / `Mod+Right` | Focus column or monitor left / right |
+| `Mod+Up` / `Mod+Down` | Focus workspace up / down |
+| `Mod+H` / `Mod+K` | Focus column or monitor left / right |
+| `Mod+J` / `Mod+U` | Focus down / up (column → workspace → monitor) |
+| `Mod+Ctrl+Left` / `Mod+Ctrl+Right` | Focus monitor left / right |
+| `Mod+Ctrl+Up` / `Mod+Ctrl+Down` | Focus workspace up / down |
+| `Mod+Ctrl+H` / `Mod+Ctrl+K` | Focus monitor left / right |
+| `Mod+Ctrl+U` / `Mod+Ctrl+J` | Focus workspace up / down |
+| `Mod+Semicolon` | Focus column right |
 | `Mod+F` | Maximize column |
 | `Mod+W` | Toggle floating |
 | `Alt+Return` | Fullscreen |
@@ -21,18 +29,20 @@ Default keybinds, from `niri/.config/niri/keybinds.kdl`. `Mod` is the Super/Wind
 | Key | Action |
 |-----|--------|
 | `Mod+Tab` | Toggle overview (Win+Tab style) |
+| `Mod+Ctrl+Tab` / `Mod+Shift+Tab` | Cycle workspace down / up |
 | `Mod+1..4` | Focus workspace |
 | `Mod+Shift+1..4` | Move column to workspace |
-| `Mod+Ctrl+Tab` / `Mod+Shift+Tab` | Cycle workspace down / up |
 
 ## Switcher (recent-windows)
 
 | Key | Scope |
 |-----|-------|
-| `Alt+Tab` / `Alt+Shift+Tab` | All windows / current output |
-| `Alt+grave` / `Alt+Shift+grave` | All windows, filtered by app |
-| `Ctrl+Alt+Tab` / `Ctrl+Alt+Shift+Tab` | Current workspace |
-| `Ctrl+Alt+grave` / `Ctrl+Alt+Shift+grave` | Current workspace, filtered by app |
+| `Alt+Tab` | Next window (all) |
+| `Alt+Shift+Tab` | Next window (workspace) |
+| `Alt+Ctrl+Tab` | Previous window (output) |
+| `Alt+grave` / `Alt+Shift+grave` | Next / previous (all, filtered by app) |
+| `Ctrl+Alt+Shift+Tab` | Previous window (workspace) |
+| `Ctrl+Alt+grave` / `Ctrl+Alt+Shift+grave` | Next / previous (workspace, filtered by app) |
 
 ## Launcher & tools
 
@@ -43,10 +53,12 @@ Default keybinds, from `niri/.config/niri/keybinds.kdl`. `Mod` is the Super/Wind
 | `Mod+C` | Calculator |
 | `Mod+Ctrl+E` | Emoji picker |
 | `Mod+,` | Settings |
-| `Mod+Ctrl+K` | Hotkey overlay (cheatsheet) |
+| `Mod+S` | Control center |
+| `Mod+Ctrl+O` | Hotkey overlay (cheatsheet) |
 | `Mod+Ctrl+Q` | Session menu |
 | `Mod+L` | Lock screen |
-| `Mod+Ctrl+w` | Toggle wallpaper |
+| `Mod+Shift+w` | Random wallpaper |
+| `Mod+Ctrl+t` | Wallhaven browser (wallpaper picker) |
 
 ## Apps
 
@@ -58,11 +70,22 @@ Default keybinds, from `niri/.config/niri/keybinds.kdl`. `Mod` is the Super/Wind
 | `Mod+E` | Emacs (client) |
 | `Mod+F1..F4` | Modes: dev / gaming / music / normal |
 
-## Wallpaper
+## Launcher & paneles (noctalia)
 
-| Key | Action |
+Vigentes mientras un panel de noctalia tiene el foco (launcher, control center,
+clipboard, etc.). Navegación con estilo emacs: `Ctrl+n` / `Ctrl+p` se suman a
+las flechas para mover la selección.
+
+| Key | Acción |
 |-----|--------|
-| `Mod+Shift+w` | Random wallpaper (from settings folder) |
+| `Up` / `Ctrl+p` | Selección anterior |
+| `Down` / `Ctrl+n` | Selección siguiente |
+| `Left` / `Right` | Navegación horizontal |
+| `Return` / `Space` | Activar selección (launcher) |
+| `Tab` / `Shift+Tab` | Siguiente / anterior pestaña o campo |
+| `Escape` | Cerrar panel / cancelar |
+| `Ctrl+c` / `Ctrl+s` | Copiar / guardar |
+| `Delete` | Eliminar |
 
 ## Screenshots
 

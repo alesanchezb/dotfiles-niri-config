@@ -17,7 +17,7 @@ el emacs-config.
 
 Opciones:
   --no-pull   no hacer git pull del repo de dotfiles
-  --no-aur    no instalar paquetes AUR (quickshell, matugen, fuentes...)
+  --no-aur    no instalar paquetes AUR (noctalia, matugen, fuentes...)
   --emacs     instalar emacs-config sin preguntar
   --no-emacs  no instalar emacs-config
   --full      incluir paquetes opcionales (cava, ytmdesktop)
@@ -68,7 +68,15 @@ prep_stow
 stow_pkgs
 ok "dotfiles enlazados vía stow: ${STOW_PKGS[*]}"
 
-seed_noctalia
+# --- daemon de notificaciones ---
+# noctalia actúa como daemon de org.freedesktop.Notifications. Si dunst está
+# instalado, entra por activación DBus y le roba el nombre al iniciar sesión;
+# enmascararlo garantiza que las notificaciones usen el theming de noctalia.
+if [ -e /usr/lib/systemd/user/dunst.service ]; then
+    systemctl --user stop dunst >/dev/null 2>&1 || true
+    systemctl --user mask dunst >/dev/null 2>&1 || true
+    info "dunst enmascarado (noctalia es el daemon de notificaciones)"
+fi
 
 if [ ! -d "$WALLPAPER_DIR" ]; then
     mkdir -p "$WALLPAPER_DIR"
@@ -110,8 +118,8 @@ install_emacs
 cat <<EOF
 
 ${C_BOLD}Setup completado.${C_RESET}
-- Enlazado vía stow: niri, quickshell, rofi, scripts
+- Enlazado vía stow: niri, rofi, scripts, noctalia
 - Recarga niri con: niri msg action load-config-file
 - Backup de configs previas (si hubo): $BACKUP_DIR
-- Ajustes de noctalia: Mod+, (settings) · Mod+Ctrl+K (overlay de hotkeys)
+- Ajustes de noctalia: Mod+, (settings) · Mod+Ctrl+O (overlay de hotkeys)
 EOF

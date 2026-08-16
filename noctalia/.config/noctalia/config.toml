@@ -15,6 +15,13 @@ art_size = 20
 title_scroll = "on_hover"
 hide_when_no_media = true
 
+# Fondo difuminado del overview (layer noctalia-backdrop, requiere la
+# layer-rule en niri/window-rules.kdl: place-within-backdrop true).
+[backdrop]
+enabled = true
+blur_intensity = 0.5
+tint_intensity = 0.3
+
 # Notificaciones: noctalia actúa como daemon de org.freedesktop.Notifications.
 # Es importante que dunst/swaync estén enmascarados (systemctl --user mask dunst)
 # para que no le roben el nombre por activación DBus.
